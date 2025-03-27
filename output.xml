@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.2 on win32)" generated="2025-03-27T14:00:36.591680" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Departments" source="C:\Users\HP\Documents\RobotDepTests\tests\test_departments.robot">
+<robot generator="Robot 7.2.2 (Python 3.12.9 on win32)" generated="2025-03-27T14:26:45.933604" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Departments" source="C:\TEST\Robot\Robot_API\robot_API\tests\test_departments.robot">
 <test id="s1-t1" name="Afficher Tous Les Départements" line="7">
 <kw name="Open Departments Page" owner="DepartmentsPage">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:37.172934" level="INFO">Opening browser 'chrome' to base url 'http://192.168.1.95:3000/'.</msg>
+<msg time="2025-03-27T14:26:46.296775" level="INFO">Opening browser 'chrome' to base url 'http://192.168.1.95:3000/'.</msg>
 <arg>http://192.168.1.95:3000/</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-27T14:00:37.171933" elapsed="3.134096"/>
+<status status="PASS" start="2025-03-27T14:26:46.295774" elapsed="10.318601"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.307032" elapsed="0.071996"/>
+<status status="PASS" start="2025-03-27T14:26:56.615412" elapsed="0.040614"/>
 </kw>
-<status status="PASS" start="2025-03-27T14:00:37.170946" elapsed="3.208082"/>
+<status status="PASS" start="2025-03-27T14:26:46.293673" elapsed="10.362981"/>
 </kw>
 <kw name="Click Show Departments Button" owner="DepartmentsPage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${DEPT_BUTTON}</arg>
 <arg>timeout=10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.385040" elapsed="0.105001"/>
+<status status="PASS" start="2025-03-27T14:26:56.657663" elapsed="0.112111"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:40.491027" level="INFO">Clicking element 'xpath=//button[contains(text(), "Afficher départements")]'.</msg>
+<msg time="2025-03-27T14:26:56.769774" level="INFO">Clicking element 'xpath=//button[contains(text(), "Afficher départements")]'.</msg>
 <arg>${DEPT_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.490041" elapsed="0.108989"/>
+<status status="PASS" start="2025-03-27T14:26:56.769774" elapsed="0.073172"/>
 </kw>
-<status status="PASS" start="2025-03-27T14:00:40.383037" elapsed="0.215993"/>
+<status status="PASS" start="2025-03-27T14:26:56.656654" elapsed="0.186292"/>
 </kw>
 <kw name="Get Department Names From CSV" owner="CSVUtils">
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2025-03-27T14:00:40.601028" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\HP\Documents\RobotDepTests\data\departments.csv"&gt;C:\Users\HP\Documents\RobotDepTests\data\departments.csv&lt;/a&gt;'.</msg>
-<msg time="2025-03-27T14:00:40.603026" level="INFO">${content} = dept_no,dept_name
+<msg time="2025-03-27T14:26:56.843954" level="INFO" html="true">Getting file '&lt;a href="file://C:\TEST\Robot\Robot_API\robot_API\data\departments.csv"&gt;C:\TEST\Robot\Robot_API\robot_API\data\departments.csv&lt;/a&gt;'.</msg>
+<msg time="2025-03-27T14:26:56.844952" level="INFO">${content} = dept_no,dept_name
 d009,Customer Service
 d005,Development
 d002,Finance
@@ -46,615 +46,615 @@ d008,Research
 d007,Sales
 </msg>
 <var>${content}</var>
-<arg>C:\\Users\\HP\\Documents\\RobotDepTests\\resources/../data/departments.csv</arg>
+<arg>C:\\TEST\\Robot\\Robot_API\\robot_API\\resources/../data/departments.csv</arg>
 <arg>encoding=UTF-8</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.600029" elapsed="0.002997"/>
+<status status="PASS" start="2025-03-27T14:26:56.843954" elapsed="0.000998"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-03-27T14:00:40.604031" level="INFO">${lines} = ['dept_no,dept_name', 'd009,Customer Service', 'd005,Development', 'd002,Finance', 'd003,Human Resources', 'd001,Marketing', 'd004,Production', 'd006,Quality Management', 'd008,Research', 'd007,Sales'...</msg>
+<msg time="2025-03-27T14:26:56.844952" level="INFO">${lines} = ['dept_no,dept_name', 'd009,Customer Service', 'd005,Development', 'd002,Finance', 'd003,Human Resources', 'd001,Marketing', 'd004,Production', 'd006,Quality Management', 'd008,Research', 'd007,Sales'...</msg>
 <var>${lines}</var>
 <arg>${content}</arg>
 <arg>\n</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.604031" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.844952" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2025-03-27T14:00:40.605030" level="INFO">${departments} = []</msg>
+<msg time="2025-03-27T14:26:56.845952" level="INFO">${departments} = []</msg>
 <var>${departments}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.604031" elapsed="0.000999"/>
+<status status="PASS" start="2025-03-27T14:26:56.845952" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2025-03-27T14:00:40.607033" level="INFO">${line} = d009,Customer Service</msg>
+<msg time="2025-03-27T14:26:56.845952" level="INFO">${line} = d009,Customer Service</msg>
 <var>${line}</var>
 <arg>${line}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.606027" elapsed="0.001006"/>
+<status status="PASS" start="2025-03-27T14:26:56.845952" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>'${line}' == ''</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.607033" elapsed="0.000998"/>
+<status status="PASS" start="2025-03-27T14:26:56.846948" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-03-27T14:00:40.609030" level="INFO">${fields} = ['d009', 'Customer Service']</msg>
+<msg time="2025-03-27T14:26:56.846948" level="INFO">${fields} = ['d009', 'Customer Service']</msg>
 <var>${fields}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.608031" elapsed="0.000999"/>
+<status status="PASS" start="2025-03-27T14:26:56.846948" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>len(${fields}) &lt; 2</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.610056" elapsed="0.001036"/>
+<status status="PASS" start="2025-03-27T14:26:56.846948" elapsed="0.000997"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${departments}</arg>
 <arg>${fields[1]}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.613032" elapsed="0.001999"/>
+<status status="PASS" start="2025-03-27T14:26:56.847945" elapsed="0.001007"/>
 </kw>
 <var name="${line}">d009,Customer Service</var>
-<status status="PASS" start="2025-03-27T14:00:40.606027" elapsed="0.009004"/>
+<status status="PASS" start="2025-03-27T14:26:56.845952" elapsed="0.003000"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2025-03-27T14:00:40.618035" level="INFO">${line} = d005,Development</msg>
+<msg time="2025-03-27T14:26:56.849945" level="INFO">${line} = d005,Development</msg>
 <var>${line}</var>
 <arg>${line}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.617028" elapsed="0.001007"/>
+<status status="PASS" start="2025-03-27T14:26:56.848952" elapsed="0.000993"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>'${line}' == ''</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.619030" elapsed="0.002038"/>
+<status status="PASS" start="2025-03-27T14:26:56.849945" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-03-27T14:00:40.622040" level="INFO">${fields} = ['d005', 'Development']</msg>
+<msg time="2025-03-27T14:26:56.849945" level="INFO">${fields} = ['d005', 'Development']</msg>
 <var>${fields}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.622040" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.849945" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>len(${fields}) &lt; 2</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.623029" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.849945" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${departments}</arg>
 <arg>${fields[1]}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.624029" elapsed="0.001001"/>
+<status status="PASS" start="2025-03-27T14:26:56.849945" elapsed="0.001001"/>
 </kw>
 <var name="${line}">d005,Development</var>
-<status status="PASS" start="2025-03-27T14:00:40.617028" elapsed="0.008002"/>
+<status status="PASS" start="2025-03-27T14:26:56.848952" elapsed="0.001994"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2025-03-27T14:00:40.625030" level="INFO">${line} = d002,Finance</msg>
+<msg time="2025-03-27T14:26:56.850946" level="INFO">${line} = d002,Finance</msg>
 <var>${line}</var>
 <arg>${line}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.625030" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.850946" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>'${line}' == ''</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.626029" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.850946" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-03-27T14:00:40.626029" level="INFO">${fields} = ['d002', 'Finance']</msg>
+<msg time="2025-03-27T14:26:56.851946" level="INFO">${fields} = ['d002', 'Finance']</msg>
 <var>${fields}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.626029" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.850946" elapsed="0.001000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>len(${fields}) &lt; 2</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.626029" elapsed="0.000997"/>
+<status status="PASS" start="2025-03-27T14:26:56.851946" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${departments}</arg>
 <arg>${fields[1]}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.627026" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.851946" elapsed="0.000000"/>
 </kw>
 <var name="${line}">d002,Finance</var>
-<status status="PASS" start="2025-03-27T14:00:40.625030" elapsed="0.001996"/>
+<status status="PASS" start="2025-03-27T14:26:56.850946" elapsed="0.001000"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2025-03-27T14:00:40.628025" level="INFO">${line} = d003,Human Resources</msg>
+<msg time="2025-03-27T14:26:56.852947" level="INFO">${line} = d003,Human Resources</msg>
 <var>${line}</var>
 <arg>${line}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.628025" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.852947" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>'${line}' == ''</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.628025" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.852947" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-03-27T14:00:40.629026" level="INFO">${fields} = ['d003', 'Human Resources']</msg>
+<msg time="2025-03-27T14:26:56.853947" level="INFO">${fields} = ['d003', 'Human Resources']</msg>
 <var>${fields}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.629026" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.852947" elapsed="0.001000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>len(${fields}) &lt; 2</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.629026" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.853947" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${departments}</arg>
 <arg>${fields[1]}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.629026" elapsed="0.000999"/>
+<status status="PASS" start="2025-03-27T14:26:56.854948" elapsed="0.000000"/>
 </kw>
 <var name="${line}">d003,Human Resources</var>
-<status status="PASS" start="2025-03-27T14:00:40.628025" elapsed="0.002000"/>
+<status status="PASS" start="2025-03-27T14:26:56.852947" elapsed="0.002001"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2025-03-27T14:00:40.633058" level="INFO">${line} = d001,Marketing</msg>
+<msg time="2025-03-27T14:26:56.856175" level="INFO">${line} = d001,Marketing</msg>
 <var>${line}</var>
 <arg>${line}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.631030" elapsed="0.002028"/>
+<status status="PASS" start="2025-03-27T14:26:56.856175" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>'${line}' == ''</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.634035" elapsed="0.000995"/>
+<status status="PASS" start="2025-03-27T14:26:56.856175" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-03-27T14:00:40.636030" level="INFO">${fields} = ['d001', 'Marketing']</msg>
+<msg time="2025-03-27T14:26:56.857172" level="INFO">${fields} = ['d001', 'Marketing']</msg>
 <var>${fields}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.635030" elapsed="0.001000"/>
+<status status="PASS" start="2025-03-27T14:26:56.857172" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>len(${fields}) &lt; 2</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.636030" elapsed="0.001000"/>
+<status status="PASS" start="2025-03-27T14:26:56.857172" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${departments}</arg>
 <arg>${fields[1]}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.637030" elapsed="0.002004"/>
+<status status="PASS" start="2025-03-27T14:26:56.857172" elapsed="0.000995"/>
 </kw>
 <var name="${line}">d001,Marketing</var>
-<status status="PASS" start="2025-03-27T14:00:40.631030" elapsed="0.008004"/>
+<status status="PASS" start="2025-03-27T14:26:56.856175" elapsed="0.001992"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2025-03-27T14:00:40.639034" level="INFO">${line} = d004,Production</msg>
+<msg time="2025-03-27T14:26:56.858167" level="INFO">${line} = d004,Production</msg>
 <var>${line}</var>
 <arg>${line}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.639034" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.858167" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>'${line}' == ''</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.640035" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.859152" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-03-27T14:00:40.641029" level="INFO">${fields} = ['d004', 'Production']</msg>
+<msg time="2025-03-27T14:26:56.859152" level="INFO">${fields} = ['d004', 'Production']</msg>
 <var>${fields}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.640035" elapsed="0.000994"/>
+<status status="PASS" start="2025-03-27T14:26:56.859152" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>len(${fields}) &lt; 2</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.641029" elapsed="0.001015"/>
+<status status="PASS" start="2025-03-27T14:26:56.860156" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${departments}</arg>
 <arg>${fields[1]}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.642044" elapsed="0.003022"/>
+<status status="PASS" start="2025-03-27T14:26:56.860156" elapsed="0.000996"/>
 </kw>
 <var name="${line}">d004,Production</var>
-<status status="PASS" start="2025-03-27T14:00:40.639034" elapsed="0.006032"/>
+<status status="PASS" start="2025-03-27T14:26:56.858167" elapsed="0.002985"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2025-03-27T14:00:40.646031" level="INFO">${line} = d006,Quality Management</msg>
+<msg time="2025-03-27T14:26:56.861152" level="INFO">${line} = d006,Quality Management</msg>
 <var>${line}</var>
 <arg>${line}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.646031" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.861152" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>'${line}' == ''</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.647043" elapsed="0.000994"/>
+<status status="PASS" start="2025-03-27T14:26:56.861152" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-03-27T14:00:40.649030" level="INFO">${fields} = ['d006', 'Quality Management']</msg>
+<msg time="2025-03-27T14:26:56.861152" level="INFO">${fields} = ['d006', 'Quality Management']</msg>
 <var>${fields}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.649030" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.861152" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>len(${fields}) &lt; 2</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.649030" elapsed="0.001000"/>
+<status status="PASS" start="2025-03-27T14:26:56.861152" elapsed="0.001001"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${departments}</arg>
 <arg>${fields[1]}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.650030" elapsed="0.000999"/>
+<status status="PASS" start="2025-03-27T14:26:56.862153" elapsed="0.000000"/>
 </kw>
 <var name="${line}">d006,Quality Management</var>
-<status status="PASS" start="2025-03-27T14:00:40.645066" elapsed="0.005963"/>
+<status status="PASS" start="2025-03-27T14:26:56.861152" elapsed="0.002002"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2025-03-27T14:00:40.651029" level="INFO">${line} = d008,Research</msg>
+<msg time="2025-03-27T14:26:56.863154" level="INFO">${line} = d008,Research</msg>
 <var>${line}</var>
 <arg>${line}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.651029" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.863154" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>'${line}' == ''</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.651029" elapsed="0.000999"/>
+<status status="PASS" start="2025-03-27T14:26:56.863154" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-03-27T14:00:40.652028" level="INFO">${fields} = ['d008', 'Research']</msg>
+<msg time="2025-03-27T14:26:56.864158" level="INFO">${fields} = ['d008', 'Research']</msg>
 <var>${fields}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.652028" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.863154" elapsed="0.001004"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>len(${fields}) &lt; 2</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.652028" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.864158" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${departments}</arg>
 <arg>${fields[1]}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.653028" elapsed="0.000999"/>
+<status status="PASS" start="2025-03-27T14:26:56.864158" elapsed="0.000000"/>
 </kw>
 <var name="${line}">d008,Research</var>
-<status status="PASS" start="2025-03-27T14:00:40.651029" elapsed="0.003997"/>
+<status status="PASS" start="2025-03-27T14:26:56.863154" elapsed="0.002004"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2025-03-27T14:00:40.656027" level="INFO">${line} = d007,Sales</msg>
+<msg time="2025-03-27T14:26:56.865158" level="INFO">${line} = d007,Sales</msg>
 <var>${line}</var>
 <arg>${line}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.655026" elapsed="0.001001"/>
+<status status="PASS" start="2025-03-27T14:26:56.865158" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>'${line}' == ''</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.656027" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.865158" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-03-27T14:00:40.657029" level="INFO">${fields} = ['d007', 'Sales']</msg>
+<msg time="2025-03-27T14:26:56.865158" level="INFO">${fields} = ['d007', 'Sales']</msg>
 <var>${fields}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.657029" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.865158" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>len(${fields}) &lt; 2</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.658027" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:56.866159" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${departments}</arg>
 <arg>${fields[1]}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.658027" elapsed="0.000999"/>
+<status status="PASS" start="2025-03-27T14:26:56.866159" elapsed="0.000000"/>
 </kw>
 <var name="${line}">d007,Sales</var>
-<status status="PASS" start="2025-03-27T14:00:40.655026" elapsed="0.005023"/>
+<status status="PASS" start="2025-03-27T14:26:56.865158" elapsed="0.001001"/>
 </iter>
 <iter>
 <kw name="Strip String" owner="String">
-<msg time="2025-03-27T14:00:40.660049" level="INFO">${line} = </msg>
+<msg time="2025-03-27T14:26:56.866159" level="INFO">${line} = </msg>
 <var>${line}</var>
 <arg>${line}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.660049" elapsed="0.000978"/>
+<status status="PASS" start="2025-03-27T14:26:56.866159" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Continue For Loop" owner="BuiltIn">
-<msg time="2025-03-27T14:00:40.662028" level="INFO">Continuing for loop from the next iteration.</msg>
+<msg time="2025-03-27T14:26:56.867156" level="INFO">Continuing for loop from the next iteration.</msg>
 <doc>Skips the current FOR loop iteration and continues from the next.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.661027" elapsed="0.001001"/>
+<status status="PASS" start="2025-03-27T14:26:56.867156" elapsed="0.000000"/>
 </kw>
 <arg>'${line}' == ''</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.661027" elapsed="0.001001"/>
+<status status="PASS" start="2025-03-27T14:26:56.867156" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
 <var>${fields}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="NOT RUN" start="2025-03-27T14:00:40.663028" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-27T14:26:56.867156" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>len(${fields}) &lt; 2</arg>
 <arg>Continue For Loop</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="NOT RUN" start="2025-03-27T14:00:40.663028" elapsed="0.001001"/>
+<status status="NOT RUN" start="2025-03-27T14:26:56.867156" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${departments}</arg>
 <arg>${fields[1]}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-03-27T14:00:40.665033" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-27T14:26:56.867156" elapsed="0.000000"/>
 </kw>
 <var name="${line}"/>
-<status status="PASS" start="2025-03-27T14:00:40.660049" elapsed="0.004984"/>
+<status status="PASS" start="2025-03-27T14:26:56.866159" elapsed="0.000997"/>
 </iter>
 <var>${line}</var>
 <value>@{lines}[1:]</value>
-<status status="PASS" start="2025-03-27T14:00:40.605030" elapsed="0.060003"/>
+<status status="PASS" start="2025-03-27T14:26:56.845952" elapsed="0.021204"/>
 </for>
 <return>
 <value>${departments}</value>
-<status status="PASS" start="2025-03-27T14:00:40.665033" elapsed="0.000996"/>
+<status status="PASS" start="2025-03-27T14:26:56.867156" elapsed="0.000000"/>
 </return>
-<msg time="2025-03-27T14:00:40.666029" level="INFO">${expected} = ['Customer Service', 'Development', 'Finance', 'Human Resources', 'Marketing', 'Production', 'Quality Management', 'Research', 'Sales']</msg>
+<msg time="2025-03-27T14:26:56.868155" level="INFO">${expected} = ['Customer Service', 'Development', 'Finance', 'Human Resources', 'Marketing', 'Production', 'Quality Management', 'Research', 'Sales']</msg>
 <var>${expected}</var>
-<status status="PASS" start="2025-03-27T14:00:40.600029" elapsed="0.066000"/>
+<status status="PASS" start="2025-03-27T14:26:56.843954" elapsed="0.024201"/>
 </kw>
 <kw name="Get Displayed Departments" owner="DepartmentsPage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${DEPT_NAMES_CELLS}</arg>
 <arg>timeout=10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.668028" elapsed="0.042008"/>
+<status status="PASS" start="2025-03-27T14:26:56.869160" elapsed="0.229769"/>
 </kw>
 <kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:40.723027" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="16640a48011a351598323dafe99f5f18", element="f.119C72171829281D7C744472AB5F8391.d.48577CC078BD2BF7ACB591A311F66870.e.7")&gt;, &lt;selenium.webdrive...</msg>
+<msg time="2025-03-27T14:26:57.105932" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="53c25a124c88b080d11541ef217f47aa", element="f.390DBF5237FF1D286ABE323471F3E501.d.27639D4A2C38352D0DD4824EF24AB590.e.7")&gt;, &lt;selenium.webdrive...</msg>
 <var>${elements}</var>
 <arg>${DEPT_NAMES_CELLS}</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.710036" elapsed="0.012991"/>
+<status status="PASS" start="2025-03-27T14:26:57.099955" elapsed="0.005977"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2025-03-27T14:00:40.723027" level="INFO">${names} = []</msg>
+<msg time="2025-03-27T14:26:57.105932" level="INFO">${names} = []</msg>
 <var>${names}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.723027" elapsed="0.000999"/>
+<status status="PASS" start="2025-03-27T14:26:57.105932" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:40.743025" level="INFO">${text} = Customer Service</msg>
+<msg time="2025-03-27T14:26:57.119230" level="INFO">${text} = Customer Service</msg>
 <var>${text}</var>
 <arg>${el}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.724026" elapsed="0.018999"/>
+<status status="PASS" start="2025-03-27T14:26:57.105932" elapsed="0.013298"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${names}</arg>
 <arg>${text}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.743025" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:57.120255" elapsed="0.000000"/>
 </kw>
-<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="16640a48011a351598323dafe99f5f18", element="f.119C72171829281D7C744472AB5F8391.d.48577CC078BD2BF7ACB591A311F66870.e.7")&gt;</var>
-<status status="PASS" start="2025-03-27T14:00:40.724026" elapsed="0.020001"/>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="53c25a124c88b080d11541ef217f47aa", element="f.390DBF5237FF1D286ABE323471F3E501.d.27639D4A2C38352D0DD4824EF24AB590.e.7")&gt;</var>
+<status status="PASS" start="2025-03-27T14:26:57.105932" elapsed="0.014323"/>
 </iter>
 <iter>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:40.756028" level="INFO">${text} = Development</msg>
+<msg time="2025-03-27T14:26:57.126832" level="INFO">${text} = Development</msg>
 <var>${text}</var>
 <arg>${el}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.744027" elapsed="0.012001"/>
+<status status="PASS" start="2025-03-27T14:26:57.120255" elapsed="0.006577"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${names}</arg>
 <arg>${text}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.757027" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:57.126832" elapsed="0.000000"/>
 </kw>
-<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="16640a48011a351598323dafe99f5f18", element="f.119C72171829281D7C744472AB5F8391.d.48577CC078BD2BF7ACB591A311F66870.e.8")&gt;</var>
-<status status="PASS" start="2025-03-27T14:00:40.744027" elapsed="0.013000"/>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="53c25a124c88b080d11541ef217f47aa", element="f.390DBF5237FF1D286ABE323471F3E501.d.27639D4A2C38352D0DD4824EF24AB590.e.8")&gt;</var>
+<status status="PASS" start="2025-03-27T14:26:57.120255" elapsed="0.006577"/>
 </iter>
 <iter>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:40.768028" level="INFO">${text} = Finance</msg>
+<msg time="2025-03-27T14:26:57.132902" level="INFO">${text} = Finance</msg>
 <var>${text}</var>
 <arg>${el}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.757027" elapsed="0.011001"/>
+<status status="PASS" start="2025-03-27T14:26:57.126832" elapsed="0.006070"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${names}</arg>
 <arg>${text}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.768028" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:57.132902" elapsed="0.001092"/>
 </kw>
-<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="16640a48011a351598323dafe99f5f18", element="f.119C72171829281D7C744472AB5F8391.d.48577CC078BD2BF7ACB591A311F66870.e.9")&gt;</var>
-<status status="PASS" start="2025-03-27T14:00:40.757027" elapsed="0.011001"/>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="53c25a124c88b080d11541ef217f47aa", element="f.390DBF5237FF1D286ABE323471F3E501.d.27639D4A2C38352D0DD4824EF24AB590.e.9")&gt;</var>
+<status status="PASS" start="2025-03-27T14:26:57.126832" elapsed="0.007162"/>
 </iter>
 <iter>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:40.777026" level="INFO">${text} = Human Resources</msg>
+<msg time="2025-03-27T14:26:57.139890" level="INFO">${text} = Human Resources</msg>
 <var>${text}</var>
 <arg>${el}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.769027" elapsed="0.009006"/>
+<status status="PASS" start="2025-03-27T14:26:57.133994" elapsed="0.005896"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${names}</arg>
 <arg>${text}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.778033" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:57.139890" elapsed="0.000000"/>
 </kw>
-<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="16640a48011a351598323dafe99f5f18", element="f.119C72171829281D7C744472AB5F8391.d.48577CC078BD2BF7ACB591A311F66870.e.10")&gt;</var>
-<status status="PASS" start="2025-03-27T14:00:40.768028" elapsed="0.011000"/>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="53c25a124c88b080d11541ef217f47aa", element="f.390DBF5237FF1D286ABE323471F3E501.d.27639D4A2C38352D0DD4824EF24AB590.e.10")&gt;</var>
+<status status="PASS" start="2025-03-27T14:26:57.133994" elapsed="0.005896"/>
 </iter>
 <iter>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:40.792028" level="INFO">${text} = Marketing</msg>
+<msg time="2025-03-27T14:26:57.148190" level="INFO">${text} = Marketing</msg>
 <var>${text}</var>
 <arg>${el}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.779028" elapsed="0.013000"/>
+<status status="PASS" start="2025-03-27T14:26:57.139890" elapsed="0.008300"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${names}</arg>
 <arg>${text}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.792028" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:57.148190" elapsed="0.000000"/>
 </kw>
-<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="16640a48011a351598323dafe99f5f18", element="f.119C72171829281D7C744472AB5F8391.d.48577CC078BD2BF7ACB591A311F66870.e.11")&gt;</var>
-<status status="PASS" start="2025-03-27T14:00:40.779028" elapsed="0.013000"/>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="53c25a124c88b080d11541ef217f47aa", element="f.390DBF5237FF1D286ABE323471F3E501.d.27639D4A2C38352D0DD4824EF24AB590.e.11")&gt;</var>
+<status status="PASS" start="2025-03-27T14:26:57.139890" elapsed="0.009304"/>
 </iter>
 <iter>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:40.803026" level="INFO">${text} = Production</msg>
+<msg time="2025-03-27T14:26:57.154610" level="INFO">${text} = Production</msg>
 <var>${text}</var>
 <arg>${el}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.793027" elapsed="0.009999"/>
+<status status="PASS" start="2025-03-27T14:26:57.149194" elapsed="0.005416"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${names}</arg>
 <arg>${text}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.803026" elapsed="0.001002"/>
+<status status="PASS" start="2025-03-27T14:26:57.155622" elapsed="0.000000"/>
 </kw>
-<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="16640a48011a351598323dafe99f5f18", element="f.119C72171829281D7C744472AB5F8391.d.48577CC078BD2BF7ACB591A311F66870.e.12")&gt;</var>
-<status status="PASS" start="2025-03-27T14:00:40.793027" elapsed="0.011001"/>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="53c25a124c88b080d11541ef217f47aa", element="f.390DBF5237FF1D286ABE323471F3E501.d.27639D4A2C38352D0DD4824EF24AB590.e.12")&gt;</var>
+<status status="PASS" start="2025-03-27T14:26:57.149194" elapsed="0.006428"/>
 </iter>
 <iter>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:40.814027" level="INFO">${text} = Quality Management</msg>
+<msg time="2025-03-27T14:26:57.161603" level="INFO">${text} = Quality Management</msg>
 <var>${text}</var>
 <arg>${el}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.804028" elapsed="0.009999"/>
+<status status="PASS" start="2025-03-27T14:26:57.155622" elapsed="0.005981"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${names}</arg>
 <arg>${text}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.814027" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:57.161603" elapsed="0.000000"/>
 </kw>
-<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="16640a48011a351598323dafe99f5f18", element="f.119C72171829281D7C744472AB5F8391.d.48577CC078BD2BF7ACB591A311F66870.e.13")&gt;</var>
-<status status="PASS" start="2025-03-27T14:00:40.804028" elapsed="0.009999"/>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="53c25a124c88b080d11541ef217f47aa", element="f.390DBF5237FF1D286ABE323471F3E501.d.27639D4A2C38352D0DD4824EF24AB590.e.13")&gt;</var>
+<status status="PASS" start="2025-03-27T14:26:57.155622" elapsed="0.005981"/>
 </iter>
 <iter>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:40.824029" level="INFO">${text} = Research</msg>
+<msg time="2025-03-27T14:26:57.167611" level="INFO">${text} = Research</msg>
 <var>${text}</var>
 <arg>${el}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.815025" elapsed="0.010011"/>
+<status status="PASS" start="2025-03-27T14:26:57.161603" elapsed="0.006008"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${names}</arg>
 <arg>${text}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.825036" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:57.167611" elapsed="0.000000"/>
 </kw>
-<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="16640a48011a351598323dafe99f5f18", element="f.119C72171829281D7C744472AB5F8391.d.48577CC078BD2BF7ACB591A311F66870.e.14")&gt;</var>
-<status status="PASS" start="2025-03-27T14:00:40.814027" elapsed="0.011009"/>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="53c25a124c88b080d11541ef217f47aa", element="f.390DBF5237FF1D286ABE323471F3E501.d.27639D4A2C38352D0DD4824EF24AB590.e.14")&gt;</var>
+<status status="PASS" start="2025-03-27T14:26:57.161603" elapsed="0.006008"/>
 </iter>
 <iter>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-27T14:00:40.836030" level="INFO">${text} = Sales</msg>
+<msg time="2025-03-27T14:26:57.173785" level="INFO">${text} = Sales</msg>
 <var>${text}</var>
 <arg>${el}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.825036" elapsed="0.010994"/>
+<status status="PASS" start="2025-03-27T14:26:57.167611" elapsed="0.007319"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${names}</arg>
 <arg>${text}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.836030" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:57.174930" elapsed="0.000000"/>
 </kw>
-<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="16640a48011a351598323dafe99f5f18", element="f.119C72171829281D7C744472AB5F8391.d.48577CC078BD2BF7ACB591A311F66870.e.15")&gt;</var>
-<status status="PASS" start="2025-03-27T14:00:40.825036" elapsed="0.010994"/>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="53c25a124c88b080d11541ef217f47aa", element="f.390DBF5237FF1D286ABE323471F3E501.d.27639D4A2C38352D0DD4824EF24AB590.e.15")&gt;</var>
+<status status="PASS" start="2025-03-27T14:26:57.167611" elapsed="0.007319"/>
 </iter>
 <var>${el}</var>
 <value>@{elements}</value>
-<status status="PASS" start="2025-03-27T14:00:40.724026" elapsed="0.112004"/>
+<status status="PASS" start="2025-03-27T14:26:57.105932" elapsed="0.068998"/>
 </for>
 <return>
 <value>${names}</value>
-<status status="PASS" start="2025-03-27T14:00:40.837028" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-27T14:26:57.174930" elapsed="0.000000"/>
 </return>
-<msg time="2025-03-27T14:00:40.837028" level="INFO">${actual} = ['Customer Service', 'Development', 'Finance', 'Human Resources', 'Marketing', 'Production', 'Quality Management', 'Research', 'Sales']</msg>
+<msg time="2025-03-27T14:26:57.174930" level="INFO">${actual} = ['Customer Service', 'Development', 'Finance', 'Human Resources', 'Marketing', 'Production', 'Quality Management', 'Research', 'Sales']</msg>
 <var>${actual}</var>
-<status status="PASS" start="2025-03-27T14:00:40.667029" elapsed="0.169999"/>
+<status status="PASS" start="2025-03-27T14:26:56.868155" elapsed="0.306775"/>
 </kw>
 <kw name="Lists Should Be Equal" owner="Collections">
 <arg>${actual}</arg>
 <arg>${expected}</arg>
 <doc>Fails if given lists are unequal.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.837028" elapsed="0.001000"/>
+<status status="PASS" start="2025-03-27T14:26:57.175927" elapsed="0.000000"/>
 </kw>
 <kw name="Close Departments Page" owner="DepartmentsPage">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-27T14:00:40.839029" elapsed="2.244718"/>
+<status status="PASS" start="2025-03-27T14:26:57.176927" elapsed="2.156305"/>
 </kw>
-<status status="PASS" start="2025-03-27T14:00:40.839029" elapsed="2.244718"/>
+<status status="PASS" start="2025-03-27T14:26:57.175927" elapsed="2.157305"/>
 </kw>
 <tag>departements</tag>
-<status status="PASS" start="2025-03-27T14:00:37.169931" elapsed="5.914819"/>
+<status status="PASS" start="2025-03-27T14:26:46.292917" elapsed="13.041199"/>
 </test>
-<status status="PASS" start="2025-03-27T14:00:36.594665" elapsed="6.491087"/>
+<status status="PASS" start="2025-03-27T14:26:45.935109" elapsed="13.401000"/>
 </suite>
 <statistics>
 <total>
